@@ -1,0 +1,120 @@
+body {
+  color: $base-font-color;
+  font-family: $title-font-family;
+  font-size: $base-font-size;
+  -webkit-font-smoothing: antialiased;
+  line-height: $base-line-height;
+  text-rendering: optimizeLegibility;
+  @include media($phone-wide) {font-size: $base-font-size / 1.2;}
+}
+
+h1, .h1, h2, h3, h4, h5, h6 {
+  font-family: $title-font-family;
+  line-height: 1.5;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0;
+  text-rendering: optimizeLegibility; // Fix the character spacing for headings
+  &[id] {margin-bottom: .2em;}
+}
+
+h1, .h1 {
+  font-size: $base-font-size * 3.25;
+  line-height: 1;
+  color: lighten($base-font-color, 8)
+}
+
+h2 {
+  font-size: $base-font-size * 2.25;
+  // font-weight: 600;
+}
+
+h3 {
+  font-size: $base-font-size * 1.75;
+  // font-weight: 100;
+}
+
+h4 {
+  font-size: $base-font-size * 1.5;
+}
+
+h5 {
+  font-size: $base-font-size * 1.25;
+}
+
+h6 {
+  font-size: $base-font-size;
+}
+
+p {
+  margin: 0 0 ($base-line-height * .5);
+  font-size: $base-font-size * 1.25;
+  i {
+    position: relative;
+    top: .1em;
+  }
+}
+
+a {
+  color: $base-link-color;
+  text-decoration: none;
+  @include transition(color 0.1s linear);
+
+  &:hover {
+    color: $hover-link-color;
+  }
+
+  &:active, &:focus {
+    color: $hover-link-color;
+    outline: none;
+  }
+}
+
+hr {
+  border-bottom: 1px solid $base-border-color;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  margin: $base-line-height 0;
+}
+
+img {
+  margin: 0;
+  max-width: 100%;
+}
+
+abbr, acronym {
+  border-bottom: 1px dotted $base-border-color;
+  cursor: help;
+}
+
+address {
+  display: block;
+  margin: 0 0 ($base-line-height / 2);
+}
+
+hgroup {
+  margin-bottom: $base-line-height / 2;
+}
+
+del {
+  color: lighten($base-font-color, 15);
+}
+
+blockquote {
+  border-left: 2px solid $base-border-color;
+  color: lighten($base-font-color, 15);
+  margin: $base-line-height 0;
+  padding-left: $base-line-height / 2;
+}
+
+cite {
+  color: lighten($base-font-color, 25);
+  font-style: italic;
+
+  &:before {
+    content: '\2014 \00A0';
+  }
+}

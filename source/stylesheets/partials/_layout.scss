@@ -1,0 +1,42 @@
+@import 'init';
+
+.container {
+  @include outer-container;
+  @include box-sizing(content-box);
+  padding: 0 $grid-padding-desktop;
+  &.narrow {
+    max-width: 38em;
+  }
+  @include media($tablet) {
+    padding: 0 $grid-padding-tablet;
+  }
+  @include media($phone-wide) {
+    padding: 0 $grid-padding-phone * 2;
+  }
+}
+
+.video {
+  position: relative;
+  margin: 0 (-($grid-padding-desktop * 2));
+  .video__inner {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+  }
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  @include media($desktop-narrow) {
+    margin: 0 (-($grid-padding-desktop));
+  }
+  @include media($tablet) {
+    margin: 0 (-($grid-padding-tablet));
+  }
+  @include media($phone-wide) {
+    margin: 0 (-($grid-padding-phone));
+  }
+}
